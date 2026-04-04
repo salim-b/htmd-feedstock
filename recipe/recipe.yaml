@@ -34,10 +34,8 @@ requirements:
 
 tests:
   - script:
-      - if: build_platform == host_platform
-        then:
-          - htmd --help
-          - htmd --version
+      - htmd --help
+      - htmd --version
   - package_contents:
       bin:
         - htmd
