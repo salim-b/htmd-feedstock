@@ -18,11 +18,11 @@ build:
     content:
       - if: unix
         then:
-          - cargo auditable install --locked --no-track --bins --root ${{ PREFIX }} --path .
+          - cargo auditable install --path=. --root="$PREFIX" --no-track --locked --bins
       - if: win
         then:
-          - cargo auditable install --locked --no-track --bins --root %LIBRARY_PREFIX% --path .
-      - cargo-bundle-licenses --format yaml --output ./THIRDPARTY.yml
+          - cargo auditable install --path=. --root="%LIBRARY_PREFIX%" --no-track --locked --bins
+      - cargo-bundle-licenses --format=yaml --output=./THIRDPARTY.yml
 
 requirements:
   build:
